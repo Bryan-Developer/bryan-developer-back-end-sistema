@@ -1,0 +1,26 @@
+{
+  "name": "bryan-developer-back-end-sistema",
+  "version": "1.0.0",
+  "description": "./bryan-developer-back-end-sistema",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node Server/Server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bryan-Developer/bryan-developer-back-end-sistema.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Bryan-Developer/bryan-developer-back-end-sistema/issues"
+  },
+  "homepage": "https://github.com/Bryan-Developer/bryan-developer-back-end-sistema#readme",
+  "dependencies": {
+    "body-parser": "1.19.0",
+    "express": "4.17.1",
+    "mongoose": "5.9.7"
+  }
+}
