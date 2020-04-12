@@ -34,4 +34,12 @@ app.put('/categoria/:id', (request, response) => {
             response.json({ ok: true, categoria })
         });
 });
+app.delete('/categoria/:id', (request, response) => {
+    let id = request.params.id;
+    Categoria.findByIdAndDelete(id, (error, categoria) => {
+        if (error) return response.status(500).json({ ok: false, error });
+        if (!categoria) return response.status(400).json({ ok: false, error: { mensaje: `Categoria con el siguiente id:${id} no existe` } });
+        response.json({ ok: true, mensaje: 'Categoria Eliminada' });
+    });
+});
 module.exports = app;
