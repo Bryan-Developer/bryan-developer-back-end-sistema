@@ -18,8 +18,15 @@ app.post('/categoria', (request, response) => {
             ok: false,
             error
         });
-        response.json({ ok: true, categoria: documento });
+        response.status(201).json({ ok: true, categoria: documento });
     });
+});
+app.get('/categoria/:id', (request, response) => {
+    let id = request.params.id;
+    Categoria.findById(id, (error, categoria) => {
+        if (error) return response.status(500).json({ ok: false, error });
+        response.json({ ok: true, categoria })
+    })
 });
 app.put('/categoria/:id', (request, response) => {
     let id = request.params.id;
@@ -31,7 +38,7 @@ app.put('/categoria/:id', (request, response) => {
         (error, categoria) => {
             if (error) return response.status(500).json({ ok: false, error });
             if (!categoria) return response.status(400).json({ ok: false, error });
-            response.json({ ok: true, categoria })
+            response.json({ ok: true, mensaje: 'La ACTUALIZACIÓN fue un exito.' })
         });
 });
 app.delete('/categoria/:id', (request, response) => {
